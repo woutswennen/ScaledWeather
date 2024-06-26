@@ -17,9 +17,8 @@ class WeatherApi:
         else:
             return response.raise_for_status()
 
-    def get_weather(self, location):
-        get_weather_endpoint = 'location.json'
-        params = {'q': "Alken", 'aqi': 'no'}
+    def get_weather(self, location, version):
+        get_weather_endpoint = f'/current.{version}'
+        params = {'q': location, 'aqi': 'no'}
         return self.api_call(get_weather_endpoint, params)
-
 
