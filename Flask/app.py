@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from controller import Controller
+from flask_cors import CORS
 
 controller = Controller()
 
@@ -8,6 +9,7 @@ def create_app():
     return app
 
 app = create_app()
+CORS(app)
 
 @app.route('/weather/<location>/<format>')
 def get_weather(location, format):
