@@ -2,10 +2,10 @@ name: Docker Image Publish
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "weather-app"]
     tags: [ 'v*.*.*' ]
   pull_request:
-    branches: ["main"]
+    branches: ["main", "weather-app"]
 
 env:
   REGISTRY: docker.io
