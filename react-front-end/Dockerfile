@@ -1,12 +1,12 @@
 FROM node:14-alpine
 
-WORKDIR /app
+WORKDIR /react-front-end
 
 COPY package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY react-front-end /react-front-end
 
 RUN npm run build
 
